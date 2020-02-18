@@ -1,0 +1,29 @@
+body{
+    background-color: rgb(243, 247, 250);
+    font-family: Arial, Helvetica, sans-serif;
+}
+.r1{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.r1 div{
+    padding: 8px 16px;
+}
+.r1-c1{
+    flex: 1;
+
+}
+h2{
+    text-align: center;
+
+}
+form{
+    text-align: center;
+    font-size: 20px;
+}
+input{
+    font-size: large;
+}
