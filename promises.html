@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            const getIds = new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve([12,34,56,78,90]);
+                }, 1500);
+            });
+
+            const getRecipe = recId => {
+                return new Promise( (resolve, reject) => {
+                    setTimeout(Id => {
+                        const recipe = {title: 'fresh tomato pasta', publisher:'jonas'};
+                        resolve(`${Id}:${recipe.title}`);
+                    }, 1500, recId);
+                    });
+            }
+
+            const getRelated = publisher => {
+                return new Promise( (resolve, reject) =>{
+                    setTimeout(pub => {
+                        const recipe = {title:'italian pizza', publisher:'Jonas'};
+                        reject(`${pub}:${recipe.title}`);
+                    }, 1500, publisher);
+                });
+            };
+
+            getIds
+            .then((Ids) => {
+                console.log(Ids);
+                return getRecipe(Ids[2]);
+            })
+            .then(recipe => {
+                console.log(recipe);
+                return getRelated('Jonas');
+            })
+            .then( recipe => {
+                console.log(recipe);
+            })
+            .catch(() => {
+                console.log("error!")
+            })
+        
+        </script>
+    </head>
+    <title>promises</title>
+    <body>
+        <h1>Asynchronous JS!</h1>
+    </body>
+</html>
